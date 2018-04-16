@@ -37,7 +37,7 @@
       </select>
   </div>
   <div class="form-group col-md-2">
-      <label for="cantidad">Cantidad</label>
+      <label for="cantidad">Cantidades</label>
       <input type="number" name="cantidad[]" class="form-control" id="cantidad" value="1" min="1" max="500" required="required">
 
 
