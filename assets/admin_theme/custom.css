@@ -1,0 +1,38 @@
+#sweets_table_length,
+#solicitudes_table_length
+
+{
+
+	margin-bottom:-35px;
+	margin-top:5px;
+}
+.dataTables_length{
+
+	margin:0px;
+
+}
+
+.btn.btn-default.buttons-excel.buttons-html5{
+	padding-top: 4px;
+	padding-bottom: 4px;
+}
+
+
+#loading-indicator {
+   position: fixed;
+  z-index: 999;
+  height: 3em;
+  width: 3em;
+  overflow: show;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+label.error{
+  padding-top:5px;
+  padding-bottom: 10px;
+  color:red;
+}
