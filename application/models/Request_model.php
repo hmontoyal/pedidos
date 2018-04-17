@@ -43,7 +43,9 @@ class Request_model extends CI_Model {
             if ($this->db->trans_status() === FALSE)
             {
                     // generate an error... or use the log_message() function to log your error
+              return false;
             }
+          return true;
   }
 
      

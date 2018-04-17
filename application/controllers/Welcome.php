@@ -39,6 +39,7 @@ class Welcome extends MY_Controller {
 	}
 
 	public function sendRequest(){
+		header('Content-Type: application/json');
 		if($this->input->post()){
 			
 			$prod = $this->input->post('producto');
@@ -52,13 +53,9 @@ class Welcome extends MY_Controller {
             		$i++;
             }
 
-            $this->request_model->newRequest($id_client, $items);
-
-			//crear la solicitud de pedido
-			
-			// foreach ($productos as $row) {
-				
-			// }
+            $result = $this->request_model->newRequest($id_client, $items);
+             
+            echo json_encode(array('result' => $result));
 		}
 	}
 }
