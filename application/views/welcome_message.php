@@ -1,4 +1,3 @@
-<form>
 
 <div class="row">
  
