@@ -176,7 +176,7 @@
                             <a href="#"><i class="fa fa-truck fa-fw"></i> Gestion de Pedidos<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                   <li>
-                            <a href="<?php echo base_url(); ?>"><i class="fa fa-dashboard fa-fw"></i> Solicitar Productos (OC)</a>
+                            <a href="<?php echo base_url('welcome/index'); ?>"><i class="fa fa-dashboard fa-fw"></i> Solicitar Productos (OC)</a>
                         </li>
                                                        <li>
                             <a href="<?php echo base_url('solicitudes'); ?>"><i class="fa fa-shopping-cart fa-fw"></i> Administrar Solicitudes</a>

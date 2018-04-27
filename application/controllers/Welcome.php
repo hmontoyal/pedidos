@@ -17,7 +17,28 @@ class Welcome extends MY_Controller {
 	 * So any other public methods not prefixed with an underscore will
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
+
+
 	 */
+
+public function inicio()
+	{
+
+if( $this->require_min_level(EJECUTIVE_LEVEL) )
+		{
+
+			$sweets = $this->sweets_model->_list();
+			$clients = $this->clients_model->_list();
+			$this->template->set('title', 'Generar Pedido Productos (OC)');
+			$this->template->set('page_header', 'Generar Pedido Productos (OC)');
+			$this->template->set('css', array());
+			$this->template->set('scripts', array('pages/welcome/index.js'));
+			$this->template->load('default_layout', 'contents' , 'inicio/index', array('sweets' => $sweets, 'clients' => $clients));
+	     }
+
+
+}
+
 	public function index()
 	{
 		if( $this->require_min_level(EJECUTIVE_LEVEL) )
