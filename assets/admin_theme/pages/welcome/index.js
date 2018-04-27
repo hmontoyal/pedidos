@@ -3,8 +3,9 @@ $(document).ready(function(){
 
 	form.ajaxForm({
 		success: function(data){
-			if(data.result == true){
+			if(data.result !== false){
 				 toastr["success"]("SOLICITUD ENVIADA  CON ÉXITO!");
+				 location.href = BASE_URL + '/welcome/detalle/'+data.result;
 			}else{
 				 toastr["error"]("NO SE PUDO CREAR LA SOLICITUD, INTENTELO MAS TARDE");
 			}

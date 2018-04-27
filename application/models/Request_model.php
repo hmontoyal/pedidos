@@ -38,6 +38,7 @@ class Request_model extends CI_Model {
                }
           // $this->db->query('AN SQL QUERY...');
           // $this->db->query('ANOTHER QUERY...');
+
           $this->db->trans_complete();
 
             if ($this->db->trans_status() === FALSE)
@@ -45,7 +46,17 @@ class Request_model extends CI_Model {
                     // generate an error... or use the log_message() function to log your error
               return false;
             }
-          return true;
+          return $request_id;
+  }
+
+
+  public function detail($id){
+      $this->db->where('id_request', $id);
+      $result = $this->db->get('requests_detail_view');
+      if($result->num_rows() > 0 ){
+      return $result->result();
+    }
+    return false;
   }
 
      

@@ -80,6 +80,17 @@ if( $this->require_min_level(EJECUTIVE_LEVEL) )
 		}
 	}
 
+	public function detalle($id){
+		if($this->require_min_level(EJECUTIVE_LEVEL)){
+			$this->load->library('pdfgenerator');
+			$this->load->model('request_model');
+			$data = $this->request_model->detail($id);
+			 $html = $this->load->view('table_report', array('data' => $data), true);
+    $filename = 'report_'.time();
+     $this->pdfgenerator->generate($html, $filename, true, 'A4', 'portrait');
+		}
+	}
+
 	public function pdf(){
 		$this->load->library('pdfgenerator');
 		$data['users']=array(
