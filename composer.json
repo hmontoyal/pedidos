@@ -15,7 +15,8 @@
 		"pusher/pusher-php-server": "^3.0",
 		"phpoffice/phpword": "v0.14.*",
 		"cocur/background-process": "^0.7.0",
-		"google/apiclient": "2.0"
+		"google/apiclient": "2.0",
+		"dompdf/dompdf" : "0.6.*"
 	},
 	"suggest": {
 		"paragonie/random_compat": "Provides better randomness in PHP 5.x"

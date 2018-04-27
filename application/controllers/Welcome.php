@@ -79,4 +79,17 @@ if( $this->require_min_level(EJECUTIVE_LEVEL) )
             echo json_encode(array('result' => $result));
 		}
 	}
+
+	public function pdf(){
+		$this->load->library('pdfgenerator');
+		$data['users']=array(
+			array('firstname'=>'I am','lastname'=>'Programmer','email'=>'iam@programmer.com'),
+			array('firstname'=>'I am','lastname'=>'Designer','email'=>'iam@designer.com'),
+			array('firstname'=>'I am','lastname'=>'User','email'=>'iam@user.com'),
+			array('firstname'=>'I am','lastname'=>'Quality Assurance','email'=>'iam@qualityassurance.com')
+		);
+    $html = $this->load->view('table_report', $data, true);
+    $filename = 'report_'.time();
+     $this->pdfgenerator->generate($html, $filename, true, 'A4', 'portrait');
+	}
 }
