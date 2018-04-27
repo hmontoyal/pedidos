@@ -29,8 +29,8 @@ if( $this->require_min_level(EJECUTIVE_LEVEL) )
 
 			$sweets = $this->sweets_model->_list();
 			$clients = $this->clients_model->_list();
-			$this->template->set('title', 'Generar Pedido Productos (OC)');
-			$this->template->set('page_header', 'Generar Pedido Productos (OC)');
+			$this->template->set('title', 'Sistema Sweet Dulce Sur');
+			$this->template->set('page_header', 'Sistema Gestion Productos Artesanales SWeet');
 			$this->template->set('css', array());
 			$this->template->set('scripts', array('pages/welcome/index.js'));
 			$this->template->load('default_layout', 'contents' , 'inicio/index', array('sweets' => $sweets, 'clients' => $clients));
