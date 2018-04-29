@@ -188,6 +188,16 @@
                         </li> 
                         <li>
                             <a href="#"><i class="fa fa-truck fa-fw"></i> Gestion de Clientes<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                               
+                          <li>
+                            <a href="<?php echo base_url('clientes'); ?>"><i class="fa fa-dashboard fa-fw"></i> Administrar Clientes</a>
+                        </li>
+                              </ul>
+
+
+
+
                         <!--     <ul class="nav nav-second-level">
                                   <li>
                             <a href="<?php echo base_url(); ?>"><i class="fa fa-dashboard fa-fw"></i> Solicitar Productos (OC)</a>
@@ -244,7 +254,7 @@
             </script>
             <div id="reloj" style="font-size:20px;"></div> </center>
 
-                    
+
                 </div>
                 <!-- /.sidebar-collapse -->
 
