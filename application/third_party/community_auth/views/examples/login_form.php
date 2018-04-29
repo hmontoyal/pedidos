@@ -40,6 +40,7 @@ if( ! isset( $on_hold_message ) )
 
 	  <fieldset>
                                 <div class="form-group">
+                                	<center><img style="float" src="assets/img/logotipo.png" width="120" height="80"></center>
                                    
                                     <input type="text" name="login_string" id="login_string" class="form-control" type="email"autocomplete="off" maxlength="20" required="required" data-toggle="tooltip" title="Rut sin puntos ej. 12534153-4 , email o nombre de usuario" placeholder="12534153-4" autofocus/>
 
