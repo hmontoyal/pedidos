@@ -17,8 +17,8 @@ class Sweets extends MY_Controller{
 
 	public function index(){
 		$states = $this->global_model->fetchStates();
-			$this->template->set('title', 'Administrador de Productos');
-			$this->template->set('page_header', 'Administrador de Productos');
+			$this->template->set('title', 'Administrador de Clientes');
+			$this->template->set('page_header', 'Administrador de Clientes');
 			$this->template->set('css', array(
 				        'vendor/datatables-plugins/dataTables.bootstrap.css',
                         'vendor/datatables-responsive/dataTables.responsive.css',
@@ -44,12 +44,12 @@ class Sweets extends MY_Controller{
                          'vendor/datatables-plugins/buttons.print.min.js',
                			 '../init_tables.js',
                			 'pages/sweets/index.js'));
-			$this->template->load('default_layout', 'contents' , 'sweets/index');
+			$this->template->load('default_layout', 'contents' , 'clientes/index');
 	}
 
-		public function listar_dulces(){
+		public function listar_clientes(){
 		if($this->input->post()){
-			 $this->load->model('datatables/dulces_model', 'sweets');
+			 $this->load->model('datatables/clientes_model', 'clientes');
                   $list = $this->sweets->get_datatables();
 					        $data = array();
 					        $no = $_POST['start'];
@@ -59,8 +59,8 @@ class Sweets extends MY_Controller{
 					            $row = array();
 					            $row[] = strtoupper($fila->id);
 					            $row[] = strtoupper($fila->name);
-					            $row[] = strtoupper($fila->stock);
-					            $row[] = strtoupper($fila->price);
+					            $row[] = strtoupper($fila->address);
+					            $row[] = strtoupper($fila->rut);
 					            
 					            $row[] = '<button class="btn btn-sm btn-warning item-edit" data-id="'.$fila->id.'">Editar</button> <button class="btn btn-sm btn-danger item-delete" data-id="'.$fila->id.'">Estado</button>';
 					           

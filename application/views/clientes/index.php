@@ -12,13 +12,13 @@
     <input type= "text" name="nombre" class="form-control" id="nombre" required="required">
   </div>
   <div class="form-group">
-    <label for="precio">Precio:</label>
-    <input type= "text" name="precio" class="form-control" id="precio" required="required">
+    <label for="precio">Direccion:</label>
+    <input type= "text" name="direccion" class="form-control" id="direccion" required="required">
   </div>
 
     <div class="form-group">
-    <label for="stock">Stock Inicial:</label>
-    <input type= "number" name="stock" class="form-control" id="stock" required="required">
+    <label for="stock">Rut:</label>
+    <input type= "number" name="rut" class="form-control" id="rut" required="required">
   </div>
 
   <button type="submit" class="btn btn-success">guardar</button>
@@ -35,8 +35,8 @@
             <tr>
             <td>id</td>
             <td>Nombre</td>
-            <td>Stock</td>
-            <td>Precio</td> 
+            <td>Direccion</td>
+            <td>Rut</td> 
             <td>Acciones</td> 
               
 
@@ -76,7 +76,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Actualizar productos</h4>
+          <h4 class="modal-title">Actualizar Cliente</h4>
         </div>
         <div class="modal-body">
 
