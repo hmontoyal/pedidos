@@ -5,21 +5,28 @@
          <button class="btn btn-success btn-xs" id="btn-add">Agregar</button>
        </div>
       </div>
-      <div class="col-md-11" id="form-add-wrapper" style="display:none">
+      <div class="col-md-12" id="form-add-wrapper" style="display:none">
        <?php echo form_open(base_url('sweets/crear'),array('method' => 'post' , 'role' => 'form', 'id' => 'add-form', 'class' => 'form-inline')); ?>
+  <div class="form-group">
+    <label for="rut">Rut:</label>
+    <input type= "number" name="rut" class="form-control" id="rut" required="required">
+  </div>
+
   <div class="form-group">
     <label for="nombre">Nombre:</label>
     <input type= "text" name="nombre" class="form-control" id="nombre" required="required">
   </div>
+ 
   <div class="form-group">
-    <label for="precio">Direccion:</label>
+    <label for="calle">Direccion:</label>
+    <input type= "text" name="direccion" class="form-control" id="direccion" required="required">
+  </div>
+   <div class="form-group">
+    <label for="numero">Numero:</label>
     <input type= "text" name="direccion" class="form-control" id="direccion" required="required">
   </div>
 
-    <div class="form-group">
-    <label for="stock">Rut:</label>
-    <input type= "number" name="rut" class="form-control" id="rut" required="required">
-  </div>
+    
 
   <button type="submit" class="btn btn-success">guardar</button>
 </form>
@@ -30,13 +37,14 @@
 
    <div class="row">
   <div class="col-md-12">
-        <table id="sweets_table" class="table table-striped table-bordered nowrap" cellspacing="0" width="100%">
+        <table id="clientes_table" class="table table-striped table-bordered nowrap" cellspacing="0" width="100%">
         <thead>
             <tr>
             <td>id</td>
-            <td>Nombre</td>
-            <td>Direccion</td>
             <td>Rut</td> 
+            <td>Nombre Comercial</td>
+            <td>Direccion</td>
+            <td>Numero</td>            
             <td>Acciones</td> 
               
 

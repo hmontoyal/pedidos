@@ -154,7 +154,10 @@ class Users extends MY_Controller
 			}
 		}
     }
+    
+     
 
+ 
 
     public function listado(){
     	if($this->require_min_level(ADMIN_LEVEL)){
@@ -268,12 +271,12 @@ public function editUserHtml(){
 
 public function perfil(){
 		if($this->require_min_level(EJECUTIVE_LEVEL)){
-		   $this->template->set('title', 'Perfil');
-		   $this->template->set('page_header', 'Perfil');
+		   $this->template->set('title', 'Información de Perfil');
+		   $this->template->set('page_header', 'Información de Perfil');
 		   // $this->template->set('buttons', '<a class="btn btn-default" href="'.base_url('registros/').'"><i class="fa  fa-chevron-left"></i></a>');
 		    $this->template->set('css', array());
             $this->template->set('scripts', array());
-            $sql = $this->db->query("select * from users_anexos_view where user_id = ".$this->auth_user_id);
+            $sql = $this->db->query("select * from users where user_id = ".$this->auth_user_id);
             $result = $sql->row();
              $this->template->load('default_layout', 'contents' , 'users/perfil', array('user' => $result));
 	}
