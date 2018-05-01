@@ -13,7 +13,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
  * @link        http://community-auth.com
  */
 
-class Sweets extends MY_Controller{
+class Clientes extends MY_Controller{
 
 	public function index(){
 		$states = $this->global_model->fetchStates();
@@ -50,7 +50,7 @@ class Sweets extends MY_Controller{
 		public function listar_clientes(){
 		if($this->input->post()){
 			 $this->load->model('datatables/clientes_model', 'clientes');
-                  $list = $this->sweets->get_datatables();
+                  $list = $this->clientes->get_datatables();
 					        $data = array();
 					        $no = $_POST['start'];
 					        foreach ($list as $fila) {
@@ -74,8 +74,8 @@ class Sweets extends MY_Controller{
 					 
 					        $output = array(
 					                        "draw" => $_POST['draw'],
-					                        "recordsTotal" => $this->sweets->count_all(),
-					                        "recordsFiltered" => $this->sweets->count_filtered(),
+					                        "recordsTotal" => $this->clientes->count_all(),
+					                        "recordsFiltered" => $this->clientes->count_filtered(),
 					                        "data" => $data,
 					                );
 					        //output to json format
@@ -129,6 +129,8 @@ class Sweets extends MY_Controller{
 			
 		}
 	}
+
+	
 
 
 }
