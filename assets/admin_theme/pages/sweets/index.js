@@ -13,7 +13,7 @@ $(document).ready(function(){
             "type": "POST",
              "data" : function(d){
                 
-                  d.estado = $('#estado').val();
+                  d.estado = $('#filtro').val();
              },
              "complete": function(){
 

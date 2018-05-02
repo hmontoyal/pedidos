@@ -50,7 +50,20 @@ class Sweets extends MY_Controller{
 		public function listar_dulces(){
 		if($this->input->post()){
 			 $this->load->model('datatables/dulces_model', 'sweets');
-                  $list = $this->sweets->get_datatables();
+                  $estado = $this->input->post('estado');
+			  switch ($estado) {
+			  	case '1':
+			  		# code...
+			  	    $list = $this->sweets->get_datatables('state = 1');
+			  		break;
+			  	case '2':
+			  	    $list = $this->sweets->get_datatables('state = 0');
+			  	    break;
+			  	
+			  	default:
+			  		$list = $this->sweets->get_datatables();
+			  		break;
+			  }
 					        $data = array();
 					        $no = $_POST['start'];
 					        foreach ($list as $fila) {
