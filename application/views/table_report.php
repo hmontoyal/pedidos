@@ -25,13 +25,13 @@
 
     thead th{
       text-align: center;
-      padding: 10px;
+      padding: 5px;
     }
 
     tbody td{
       text-align: center;
       border-top: 1px solid #e3e3e3;
-      padding: 10px;
+      padding: 5px;
     }
 
     tbody tr:nth-child(even){
@@ -47,30 +47,29 @@
   <!-- <img src="<?php // echo $_SERVER['DOCUMENT_ROOT']."/media/dist/img/no-signal.png"; ?>" alt=""> -->
   <!-- In your local server -->
 
-  <img src=".assets/img/logo.png" alt="">
-
-
-<div class="info">
- <ul>
-   <li>Cliente : <?php echo $data[0]->client_name. '  '.$data[0]->last_name; ?></li>
-   
-   <li>Telefono : <?php echo $data[0]->phone; ?></li>
-   <li>Email : <?php echo $data[0]->email; ?></li>
-   <li>Fecha : <?php echo $data[0]->date; ?></li>
-
- </ul>
-</div>
+ 
   <div class="row">
   <div class="col-md-4">
 <img style="float" src="assets/img/logotipo.png" width="90" height="70">
-<div class="col-md-4"><center><h3>Solicitud de Productos</h3></center>
-<center><h4>DulceSur Ltda</h4></center>
+<div class="col-md-4"><center>Solicitud de Productos</center>
+<center>DulceSur Ltda</center>
 <center>Maipu 1921, Concepcióm</center>
 <center>Telefono: 41- 2312642</center></div>
   </div>
   
   </div>
+  <table>
+  <div class="info">
+ <ul>
+   <li>Cliente : <?php echo $data[0]->client_name. '  '.$data[0]->last_name; ?></li>
+   <li>Direccion: <?php echo $data[0]->address; ?></li>
+   <li>Telefono : <?php echo $data[0]->phone; ?></li>
+   <li>Email : <?php echo $data[0]->email; ?></li>
+   <li>Fecha Pedido: <?php echo $data[0]->date; ?></li>
 
+ </ul>
+</div>
+</table>
 
 <br>
   <!-- <img src="<?php echo $_SERVER['DOCUMENT_ROOT']."/ci-dompdf6/media/dist/img/no-signal.png"; ?>" alt=""> -->
@@ -79,11 +78,10 @@
 	  		<tr>
 	  			<th class="short">Item</th>
 	  			<th class="normal">Detalle</th>
-          <th class="normal">Cantidad</th>
+          <th class="short">Cantidad</th>
 	  			<th class="normal">Precio</th>
 
-	  			<th class="normal">Cantidad</th>
-          <th class="short">Total</th>
+	  	   <th class="short">Total</th>
           <th class="normal">SubTotal</th>
 	  			
 	  		</tr>
@@ -103,8 +101,15 @@
 	  		<?php endforeach; ?>
 
       <tr>
-        <td colspan="4">Total venta : <?php echo $total; ?></td>
+        <td align="right">Neto : <?php echo $total; ?></td>
+       
       </tr>
+      <tr>
+          <td>IVA : <?php echo ($total*1.19 - $total); ?></td>
+              </tr>
+              <tr>
+                 <td>Total: <?php echo $total*1.19; ?></td>
+              </tr>
 	  </table>
 	 </div>
 </body></html>
