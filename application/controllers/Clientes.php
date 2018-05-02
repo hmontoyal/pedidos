@@ -51,7 +51,21 @@ class Clientes extends MY_Controller{
 		public function listar_clientes(){
 		if($this->input->post()){
 			 $this->load->model('datatables/clientes_model', 'clientes');
-                  $list = $this->clientes->get_datatables();
+			  $estado = $this->input->post('estado');
+			  switch ($estado) {
+			  	case '1':
+			  		# code...
+			  	    $list = $this->clientes->get_datatables('disabled = 0');
+			  		break;
+			  	case '2':
+			  	    $list = $this->clientes->get_datatables('disabled = 1');
+			  	    break;
+			  	
+			  	default:
+			  		$list = $this->clientes->get_datatables();
+			  		break;
+			  }
+                  //$list = $this->clientes->get_datatables();
 					        $data = array();
 					        $no = $_POST['start'];
 					        foreach ($list as $fila) {
@@ -88,9 +102,10 @@ class Clientes extends MY_Controller{
 					                );
 					        //output to json format
 					        echo json_encode($output);
+			  }
 
 		}
-	}
+	
 
 
 	public function html(){

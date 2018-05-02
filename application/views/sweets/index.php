@@ -28,6 +28,16 @@
 
    </div> 
 
+      <div class="row">
+    <div class="col-md-4">
+       <select name="filtro" id="filtro" class="form-control selectpicker" data-live-search="true">
+       <option value="">TODOS</option>
+        <option value="1">ACTIVOS</option>
+        <option value="2">INACTIVOS</option>
+     </select>
+    </div>
+   </div>
+
    <div class="row">
   <div class="col-md-12">
         <table id="sweets_table" class="table table-striped table-bordered nowrap" cellspacing="0" width="100%">
