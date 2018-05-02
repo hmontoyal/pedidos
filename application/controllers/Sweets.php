@@ -63,8 +63,13 @@ class Sweets extends MY_Controller{
 					            $row[] = strtoupper($fila->stock);
 					            $row[] = strtoupper($fila->price);
 					            
-					            $row[] = '<button class="btn btn-sm btn-warning item-edit" data-id="'.$fila->id.'">Editar</button> <button class="btn btn-sm btn-danger item-delete" data-id="'.$fila->id.'">Estado</button>';
+					            if($fila->state == 0){
+					            	$row[] = '<button class="btn btn-sm btn-warning item-edit" data-id="'.$fila->id.'">Editar</button> <button class="btn btn-sm btn-danger item-delete" data-id="'.$fila->id.'">Habilitar</button>';
+					            }else{
+					            	$row[] = '<button class="btn btn-sm btn-warning item-edit" data-id="'.$fila->id.'">Editar</button> <button class="btn btn-sm btn-success item-delete" data-id="'.$fila->id.'">Deshabilitar</button>';
 					           
+					            }
+
 
 
 
@@ -129,6 +134,15 @@ class Sweets extends MY_Controller{
 				
 			
 		}
+	}
+
+		public function disable(){
+		header('Content-Type: application/json');
+		if($this->input->post()){
+			$id = $this->input->post('id');
+			echo json_encode($this->sweets_model->disable($id));
+		}
+
 	}
 
 

@@ -44,10 +44,11 @@ $(document).ready(function(){
 
                   $('.item-delete').on('click', function(){
                     var button = $(this);
-                    $.post(BASE_URL+'/clientes/delete',{id: button.data('id')}, function(result){
-                        alert(result);
+                    $.post(BASE_URL+'/clientes/disable',{id: button.data('id')}, function(result){
+                        
+                        //alert(result);
                         if(result == true){
-                                     toastr["success"]("ELIMINADO CON EXITO!");
+                                     toastr["success"]("DESACTIVADO CON EXITO!");
                                      table.ajax.reload();
                                 }else{
                                      toastr["error"]("SE PRODUJO UN ERROR, POR FAVOR INTENTELO MAS TARDE!");

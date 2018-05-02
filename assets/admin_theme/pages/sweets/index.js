@@ -44,8 +44,8 @@ $(document).ready(function(){
 
                   $('.item-delete').on('click', function(){
                     var button = $(this);
-                    $.post(BASE_URL+'/sweets/delete',{id: button.data('id')}, function(result){
-                        alert(result);
+                    $.post(BASE_URL+'/sweets/disable',{id: button.data('id')}, function(result){
+                       // alert(result);
                         if(result == true){
                                      toastr["success"]("ELIMINADO CON EXITO!");
                                      table.ajax.reload();
