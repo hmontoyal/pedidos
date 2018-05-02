@@ -1,12 +1,12 @@
 <?php echo form_open(base_url('clientes/update'), array('role' => 'form' , 'id' => 'form' , 'method' => 'post')); ?>
                   <div class="row">
 <div class="form-group col-md-4">
-	<label for="commercial_name">Nombre</label>
+	<label for="commercial_name">Contacto Nombre </label>
 			<input name="name" type="text" class="form-control" value="<?php echo $prod->name; ?>">
 		</div>
 		<input name="id" type="hidden" value="<?php echo $prod->id; ?>">
 		<div class="form-group col-md-4">
-			<label for="apellido">Apellido</label>
+			<label for="apellido">Contacto Apellido</label>
 			<input name="apellido" type="text" class="form-control" value="<?php echo $prod->last_name; ?>">
 		</div>
 
@@ -18,11 +18,11 @@
 
 	<div class="row ">
 		<div class="form-group col-md-4">
-			<label for="calle">Calle</label>
+			<label for="calle">Dirección</label>
 			<input name="calle" type="text" class="form-control" value="<?php echo $prod->calle; ?>">
 		</div>
 		<div class="form-group col-md-4">
-			<label for="numero_calle">Calle</label>
+			<label for="numero_calle">Numero Calle</label>
 			<input name="numero_calle" type="text" class="form-control" value="<?php echo $prod->numero_calle; ?>">
 		</div>
 
