@@ -4,32 +4,58 @@
        <div class="form-group">
          <button class="btn btn-success btn-xs" id="btn-add">Agregar</button>
        </div>
-      </div>
-      <div class="col-md-12" id="form-add-wrapper" style="display:none">
-       <?php echo form_open(base_url('sweets/crear'),array('method' => 'post' , 'role' => 'form', 'id' => 'add-form', 'class' => 'form-inline')); ?>
-  <div class="form-group">
+</div>
+      <div  id="form-add-wrapper" class="col-md-11" style="display:none">
+      <div class="row">
+               <?php echo form_open(base_url('clientes/crear'),array('method' => 'post' , 'role' => 'form', 'id' => 'add-form', 'class' => 'form-inline')); ?>
+  <div class="form-group col-md-2">
     <label for="rut">Rut:</label>
-    <input type= "number" name="rut" class="form-control" id="rut" required="required">
+    <input type= "text" name="rut" class="form-control" id="rut" required="required">
   </div>
 
-  <div class="form-group">
+  <div class="form-group col-md-2">
     <label for="nombre">Nombre:</label>
     <input type= "text" name="nombre" class="form-control" id="nombre" required="required">
   </div>
+
+  <div class="form-group col-md-2">
+    <label for="apellido">Apellido:</label>
+    <input type= "text" name="apellido" class="form-control" id="apellido" required="required">
+  </div>
+
+     <div class="form-group col-md-2">
+    <label for="nombre_comercial">Nombre comercial:</label>
+    <input type= "text" name="nombre_comercial" class="form-control" id="nombre_comercial" required="required">
+  </div>
  
-  <div class="form-group">
+  <div class="form-group col-md-2">
     <label for="calle">Direccion:</label>
     <input type= "text" name="direccion" class="form-control" id="direccion" required="required">
   </div>
-   <div class="form-group">
+   <div class="form-group col-md-2">
     <label for="numero">Numero:</label>
-    <input type= "text" name="direccion" class="form-control" id="direccion" required="required">
+    <input type= "text" name="numero" class="form-control" id="direccion" required="required">
   </div>
+    <div class="form-group col-md-2">
+    <label for="telefono">Telefono:</label>
+    <input type= "text" name="telefono" class="form-control" id="telefono" required="required">
+  </div>
+
+  <div class="form-group col-md-2">
+    <label for="email">Email:</label>
+    <input type= "email" name="email" class="form-control" id="email" required="required">
+  </div>
+
+
 
     
 
-  <button type="submit" class="btn btn-success">guardar</button>
+   <div class="form-group">
+    <br>
+     <button type="submit" name="button" class="btn btn-success">guardar</button>
+   </div>
 </form>
+      </div>
 </div>
 
 

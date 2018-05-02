@@ -54,6 +54,17 @@ class Sweets_model extends CI_Model {
     return ($this->db->affected_rows() > 0);
   }
 
+  public function disable($id){
+    $query = $this->db->query("UPDATE ".$this->table." SET state = IF(state=1, 0, 1) where id =".$id.";");
+    //$result = $query->result();
+    if($this->db->affected_rows() >= 1){
+      return true;
+    }
+
+    return false;
+  }
+    
+
      
 
 }

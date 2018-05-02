@@ -17,6 +17,7 @@ class Clientes extends MY_Controller{
 
 	public function index(){
 		$states = $this->global_model->fetchStates();
+		$this->load->model('clients_model');
 			$this->template->set('title', 'Administrador de Clientes');
 			$this->template->set('page_header', 'Administrador de Clientes');
 			$this->template->set('css', array(
@@ -65,8 +66,12 @@ class Clientes extends MY_Controller{
 
 					            
 					            
-					            $row[] = '<button class="btn btn-sm btn-warning item-edit" data-id="'.$fila->id.'">Editar</button> <button class="btn btn-sm btn-danger item-delete" data-id="'.$fila->id.'">Estado</button>';
+					            if($fila->disabled){
+					            	$row[] = '<button class="btn btn-sm btn-warning item-edit" data-id="'.$fila->id.'">Editar</button> <button class="btn btn-sm btn-danger item-delete" data-id="'.$fila->id.'">Habilitar</button>';
+					            }else{
+					            	$row[] = '<button class="btn btn-sm btn-warning item-edit" data-id="'.$fila->id.'">Editar</button> <button class="btn btn-sm btn-success item-delete" data-id="'.$fila->id.'">Deshabilitar</button>';
 					           
+					            }
 
 
 
@@ -91,7 +96,7 @@ class Clientes extends MY_Controller{
 	public function html(){
 		if($this->input->post()){
 			$id = $this->input->post('id');
-			$prod = $this->clientes_model->find($id);
+			$prod = $this->clients_model->find($id);
 			$this->load->view('clientes/html', array('prod' => $prod));
 		}
 	}
@@ -101,9 +106,22 @@ class Clientes extends MY_Controller{
 		if($this->input->post()){
 			$id = $this->input->post('id');
 			$name = $this->input->post('commercial_name');
+			$last_name = $this->input->post('last_name');
+			$commercial_name = $this->input->post('commercial_name');
+			$email = $this->input->post('email');
+			$telefono = $this->input->post('telefono');
 			$calle = $this->input->post('calle');
 			$numero_calle = $this->input->post('numero_calle');
-			echo json_encode($this->clientes_model->update($id, array('commercial_name'=> $calle, 'calle' => $numero_calle, 'numero_calle' => $stock, 'updated' => date('Y-m-d H:i:s'))));
+			echo json_encode($this->clients_model->update($id, 
+				array(
+					'name' => $name,
+					'last_name' => $last_name,
+					'commercial_name'=> $calle, 
+					'calle' => $calle, 
+					'numero_calle' => $numero_calle,
+					'phone' => $telefono,
+					'email' => $email,					 
+					'updated' => date('Y-m-d H:i:s'))));
 				
 			
 		}
@@ -123,14 +141,38 @@ class Clientes extends MY_Controller{
 	public function crear(){
 		header('Content-Type: application/json');
 		if($this->input->post()){
-			$name = $this->input->post('nombre');
-			$precio = $this->input->post('precio');
-			$stock = $this->input->post('stock');
+			$rut = $this->input->post('rut');
+			$nombre = $this->input->post('nombre');
+			$apellido = $this->input->post('apellido');
+			$calle = $this->input->post('direccion');
+			$telefono = $this->input->post('telefono');
+			$numero = $this->input->post('numero');
+			$email = $this->input->post('email');
+			$nombre_comercial = $this->input->post('nombre_comercial');
+			echo json_encode($this->clients_model->save(array(
+				'rut' => $rut, 
+				'name' => $nombre, 
+				'last_name' => $apellido,
+				'calle'  => $calle,
+				'numero_calle' => $numero,
+				'phone' => $telefono,
+				'email' => $email,
+				'commercial_name' => $nombre_comercial
 
-			echo json_encode($this->sweets_model->create(array('name' => $name, 'price' => $precio, 'stock' => $stock)));
+			)));
 				
 			
 		}
+	}
+
+
+	public function disable(){
+		header('Content-Type: application/json');
+		if($this->input->post()){
+			$id = $this->input->post('id');
+			echo json_encode($this->clients_model->disable($id));
+		}
+
 	}
 
 	

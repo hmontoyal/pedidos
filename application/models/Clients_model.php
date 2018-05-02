@@ -28,6 +28,30 @@ class Clients_model extends CI_Model {
     return false;
   }
 
+    public function find($id){
+    $result = $this->db->get_where($this->table, array('id' => $id));
+    if($result->num_rows() > 0 ){
+      return $result->row();
+    }
+    return false;
+  }
+
+  public function update($id, $data){
+         $this->db->where('id', $id);
+         $this->db->update($this->table, $data);
+         return ($this->db->affected_rows() > 0);
+         
+  }
+
+  public function disable($id){
+    $query = $this->db->query("UPDATE ".$this->table." SET disabled = IF(disabled=1, 0, 1) where id =".$id.";");
+    //$result = $query->result();
+    if($this->db->affected_rows() >= 1){
+      return true;
+    }
+
+    return false;
+  }
      
 
 }
