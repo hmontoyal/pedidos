@@ -46,6 +46,20 @@
   <!-- In production server. If you choose this, then comment the local server and uncomment this one-->
   <!-- <img src="<?php // echo $_SERVER['DOCUMENT_ROOT']."/media/dist/img/no-signal.png"; ?>" alt=""> -->
   <!-- In your local server -->
+
+  <img src=".assets/img/logo.png" alt="">
+
+
+<div class="info">
+ <ul>
+   <li>Cliente : <?php echo $data[0]->client_name. '  '.$data[0]->last_name; ?></li>
+   
+   <li>Telefono : <?php echo $data[0]->phone; ?></li>
+   <li>Email : <?php echo $data[0]->email; ?></li>
+   <li>Fecha : <?php echo $data[0]->date; ?></li>
+
+ </ul>
+</div>
   <div class="row">
   <div class="col-md-4">
 <img style="float" src="assets/img/logotipo.png" width="90" height="70">
@@ -67,20 +81,30 @@
 	  			<th class="normal">Detalle</th>
           <th class="normal">Cantidad</th>
 	  			<th class="normal">Precio</th>
+
+	  			<th class="normal">Cantidad</th>
+          <th class="short">Total</th>
           <th class="normal">SubTotal</th>
 	  			
 	  		</tr>
 	  		<?php $no=1; ?>
+        <?php $total = 0; ?>
 	  		<?php foreach($data as $row): ?>
 	  		  <tr>
 	  			<td><?php echo $no; ?></td>
 	  			<td><?php echo $row->name; ?></td>	  			
 	  			<td><?php echo $row->quantity; ?></td>
+          <td><?php echo $row->total; ?></td>
           <td><?php echo $row->price; ?></td>
           <td><?php echo $row->price*$row->quantity; ?></td>
 	  		  </tr>
+           <?php $total = $total + $row->total; ?>
 	  		<?php $no++; ?>
 	  		<?php endforeach; ?>
+
+      <tr>
+        <td colspan="4">Total venta : <?php echo $total; ?></td>
+      </tr>
 	  </table>
 	 </div>
 </body></html>
