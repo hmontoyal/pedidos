@@ -25,6 +25,6 @@
   		// code...
   		break;
   } ?> </li>
-  <li class="list-group-item">ANEXO : <?php echo $user->anexo;?></li>
+  
 </ul>
 	</div>

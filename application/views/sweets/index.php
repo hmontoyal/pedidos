@@ -2,7 +2,7 @@
       <div class="row filtros">
 <div class="col-md-1">
        <div class="form-group">
-         <button class="btn btn-success btn-xs" id="btn-add">Agregar</button>
+         <button class="btn btn-success" id="btn-add">Agregar</button>
        </div>
       </div>
       <div class="col-md-11" id="form-add-wrapper" style="display:none">
@@ -33,7 +33,8 @@
         <table id="sweets_table" class="table table-striped table-bordered nowrap" cellspacing="0" width="100%">
         <thead>
             <tr>
-            <td>id</td>
+            <td>Id</td>
+            <td>Codigo</td>
             <td>Nombre</td>
             <td>Stock</td>
             <td>Precio</td> 

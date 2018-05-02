@@ -43,7 +43,7 @@ class Clientes extends MY_Controller{
                          'vendor/datatables-plugins/buttons.html5.min.js',
                          'vendor/datatables-plugins/buttons.print.min.js',
                			 '../init_tables.js',
-               			 'pages/sweets/index.js'));
+               			 'pages/clientes/index.js'));
 			$this->template->load('default_layout', 'contents' , 'clientes/index');
 	}
 
@@ -58,9 +58,12 @@ class Clientes extends MY_Controller{
 					            $no++;
 					            $row = array();
 					            $row[] = strtoupper($fila->id);
-					            $row[] = strtoupper($fila->name);
-					            $row[] = strtoupper($fila->address);
 					            $row[] = strtoupper($fila->rut);
+					            $row[] = strtoupper($fila->commercial_name);
+					            $row[] = strtoupper($fila->calle);
+					            $row[] = strtoupper($fila->numero_calle);
+
+					            
 					            
 					            $row[] = '<button class="btn btn-sm btn-warning item-edit" data-id="'.$fila->id.'">Editar</button> <button class="btn btn-sm btn-danger item-delete" data-id="'.$fila->id.'">Estado</button>';
 					           
@@ -88,8 +91,8 @@ class Clientes extends MY_Controller{
 	public function html(){
 		if($this->input->post()){
 			$id = $this->input->post('id');
-			$prod = $this->sweets_model->find($id);
-			$this->load->view('sweets/html', array('prod' => $prod));
+			$prod = $this->clientes_model->find($id);
+			$this->load->view('clientes/html', array('prod' => $prod));
 		}
 	}
 
@@ -97,10 +100,10 @@ class Clientes extends MY_Controller{
 		header('Content-Type: application/json');
 		if($this->input->post()){
 			$id = $this->input->post('id');
-			$name = $this->input->post('name');
-			$price = $this->input->post('price');
-			$stock = $this->input->post('stock');
-			echo json_encode($this->sweets_model->update($id, array('name'=> $name, 'price' => $price, 'stock' => $stock, 'updated' => date('Y-m-d H:i:s'))));
+			$name = $this->input->post('commercial_name');
+			$calle = $this->input->post('calle');
+			$numero_calle = $this->input->post('numero_calle');
+			echo json_encode($this->clientes_model->update($id, array('commercial_name'=> $calle, 'calle' => $numero_calle, 'numero_calle' => $stock, 'updated' => date('Y-m-d H:i:s'))));
 				
 			
 		}

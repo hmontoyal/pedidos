@@ -198,6 +198,27 @@ class Examples_model extends MY_Model {
 
     // --------------------------------------------------------------
 
+public function get_unused_cod()
+    {
+        // Create a random user id between 1200 and 4294967295
+        $random_unique_int = 214748 + mt_rand( 000001, 214748 );
+
+        // Make sure the random user_id isn't already in use
+        $query = $this->db->where( 'codigo', $random_unique_int )
+            ->get_where( $this->db_table('productos_table') );
+
+        if( $query->num_rows() > 0 )
+        {
+            $query->free_result();
+
+            // If the random user_id is already in use, try again
+            return $this->get_unused_cod();
+        }
+
+        return $random_unique_int;
+    }
+
+
 }
 
 /* End of file Examples_model.php */

@@ -58,6 +58,7 @@ class Sweets extends MY_Controller{
 					            $no++;
 					            $row = array();
 					            $row[] = strtoupper($fila->id);
+					            $row[] = strtoupper($fila->codigo);
 					            $row[] = strtoupper($fila->name);
 					            $row[] = strtoupper($fila->stock);
 					            $row[] = strtoupper($fila->price);
