@@ -59,6 +59,30 @@ class Request_model extends CI_Model {
     return false;
   }
 
+
+  public function confirm($id){
+  $this->db->where('id_request' , $id);
+  $this->db->update($this->table, array('state' => 1));
+   $this->descontar($id);
+
+   return ($this->db->affected_rows() > 0);
+  }
+
+
+  public function descontar($id){
+    $this->db->where('id_request', $id);
+      $result = $this->db->get('sweets_request');
+      foreach ($result->result() as $row) {
+         //descontar 
+           $producto = $row->id_sweet;
+           $cantidad = $row->quantity;
+           $this->db->where('id', $producto);
+           $this->db->set('stock', 'stock - '.$cantidad, FALSE);
+           $this->db->update('sweets');
+
+      }
+  }
+
      
 
 }

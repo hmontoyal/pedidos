@@ -103,11 +103,13 @@
 <div class="row">
 	<div class="col-md-6">
 		<?php if($validacion == true ): ?>
-			<button class="btn btn-success">Gestionar Pedido</button>
+			<button class="btn btn-success" id="btn-confirm" data-id="<?php echo $info->id_request; ?>"><i class="fa fa-thumbs-o-up"></i>&nbsp;Confirmar</button>
 		<?php else : ?>
 			<button class="btn btn-success">Gestionar Stock</button>
 	    <?php endif; ?>
 	</div>
 </div>
  </div>
+
+
 

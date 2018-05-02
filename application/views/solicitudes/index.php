@@ -3,7 +3,7 @@
  <div class="col-md-2">
           <div class="form-group">
             <select class="form-control selectpicker" name="estado" id="estado" data-show-subtext="true" data-live-search="true">
-             <option value="3" selected>TODOS</option>
+             <option value="" selected>TODOS</option>
              <?php foreach ($states as $row) : ?>
              	<option value="<?php echo $row->id; ?>"><?php echo strtoupper($row->state); ?></option>
              <?php endforeach; ?>
