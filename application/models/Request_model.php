@@ -21,6 +21,7 @@ class Request_model extends CI_Model {
 }
 
   public function _list(){
+   
     $result = $this->db->get($this->table);
     if($result->num_rows() > 0 ){
       return $result->result();
@@ -67,6 +68,14 @@ class Request_model extends CI_Model {
 
    return ($this->db->affected_rows() > 0);
   }
+
+  public function despachar($id){
+  $this->db->where('id_request' , $id);
+  $this->db->update($this->table, array('state' => 2));
+
+   return ($this->db->affected_rows() > 0);
+  }
+
 
 
   public function descontar($id){

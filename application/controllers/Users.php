@@ -59,7 +59,37 @@ public function administrar(){
 			// $anexos = $this->anexos_model->getAll();
 			 //$this->load->view('create_user', array('anexos' => $anexos));
 	   $css = array();
-	   $scripts = array('pages/users/create.js');		
+	    $css =  array(
+                        'vendor/datatables-plugins/dataTables.bootstrap.css',
+                        'vendor/datatables-responsive/dataTables.responsive.css',
+                        'vendor/clockpicker/dist/bootstrap-clockpicker.css',
+                         'vendor/switch/bootstrap-switch.min.css',
+                         'custom.css'
+
+                    );
+
+
+             $scripts = array( 
+                        'vendor/datatables/js/jquery.dataTables.min.js',
+                         'vendor/datatables-plugins/dataTables.bootstrap.min.js',
+                         'vendor/datatables-responsive/dataTables.responsive.min.js',
+                         'vendor/datatables-responsive/responsive.bootstrap.min.js',
+                         'vendor/clockpicker/dist/bootstrap-clockpicker.js',
+                         'vendor/confirmation/bootstrap-confirmation.js',
+                         'vendor/switch/bootstrap-switch.min.js',
+                         //buttons js
+                         'vendor/datatables-plugins/dataTables.buttons.min.js',
+               'vendor/datatables-plugins/buttons.bootstrap.min.js',
+                         'vendor/datatables-plugins/buttons.flash.min.js',
+                         'vendor/datatables-plugins/jszip.min.js',
+                         'vendor/datatables-plugins/pdfmake.min.js',
+                         'vendor/datatables-plugins/vfs_fonts.js',
+                         'vendor/datatables-plugins/buttons.html5.min.js',
+                         'vendor/datatables-plugins/buttons.print.min.js',
+               '../init_tables.js',
+               'pages/users/listado.js'
+                         
+                         );
 	   $this->template->set('title', 'Administrador de Usuarios');
        $this->template->set('page_header', 'Administrador de Usuarios');
        $this->template->set('css', $css);
@@ -250,10 +280,10 @@ public function administrar(){
 					          //var_dump($tareas);
 					            $no++;
 					            $row = array();
-					            $row[] = $fila->nombre;
-					            $row[] = $fila->apellido;
 					            $row[] = $fila->rut;
-					            $row[] = '<span class="label label-default">'.$fila->anexo.'</span>';
+					            $row[] = $fila->apellido;
+					            $row[] = $fila->apellido;
+					            $row[] = $fila->username;
 					            $row[] = $fila->email;
 					           // $row[] = $fila->banned;
 					            if($fila->banned == 1){
@@ -261,8 +291,7 @@ public function administrar(){
 					            }else{
 					            	$estado = '<span class="label label-success">INACTIVO</span>';
 					            }
-					            
-					            $row[] = $estado;
+					           
 					            $row[] = '<div class="btn-group btn-group-xs">
   <button type="button" class="btn btn-warning btn-edit" data-user-id="'.$fila->user_id.'"><i class="fa fa-edit"></i></button>
 </div>';
@@ -294,8 +323,8 @@ public function editUserHtml(){
 		if($this->input->post()){
 			$id = $this->input->post('id');
 			$user = $this->global->findUser($id);
-			$anexos = $this->global->getAllAnexos();
-			$this->load->view('users/html',array('user' => $user, 'anexos' => $anexos));
+			//$anexos = $this->global->getAllAnexos();
+			$this->load->view('users/html',array('user' => $user));
 		}
 	}
 }
@@ -311,6 +340,26 @@ public function perfil(){
             $sql = $this->db->query("select * from users where user_id = ".$this->auth_user_id);
             $result = $sql->row();
              $this->template->load('default_layout', 'contents' , 'users/perfil', array('user' => $result));
+	}
+}
+
+
+public function update(){
+	header('Content-Type: application/json');
+	if ($this->input->post()) {
+	    $data = $this->input->post();
+	    $data['fecha_nac'] = datepicker_to_mysql($this->input->post('fecha_nac'));
+	    $data['modified_at'] =date("Y-m-d H:i:s");
+
+	    // var_dump($data);
+        
+	    $this->load->model('global_model', 'global');
+	    if($this->global_model->updateUser($data)){
+	    	echo json_encode(array('result' => true));
+	    }else{
+	    	echo json_encode(array('result' => false));
+	    }
+
 	}
 }
 

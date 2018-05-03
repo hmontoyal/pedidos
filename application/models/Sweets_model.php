@@ -21,6 +21,7 @@ class Sweets_model extends CI_Model {
 }
 
   public function _list(){
+     $this->db->where('state',1);
     $result = $this->db->get($this->table);
     if($result->num_rows() > 0 ){
       return $result->result();

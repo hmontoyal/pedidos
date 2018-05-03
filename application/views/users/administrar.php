@@ -1,44 +1,18 @@
 <div class="col-md-12">
       <div class="row filtros">
-<div class="col-md-1">
-       <div class="form-group">
-         <button class="btn btn-success" id="btn-add">Agregar</button>
-       </div>
-      </div>
-      <div class="col-md-11" id="form-add-wrapper" style="display:none">
-       <?php echo form_open(base_url('sweets/crear'),array('method' => 'post' , 'role' => 'form', 'id' => 'add-form', 'class' => 'form-inline')); ?>
-  <div class="form-group">
-    <label for="nombre">Nombre:</label>
-    <input type= "text" name="nombre" class="form-control" id="nombre" required="required">
-  </div>
-  <div class="form-group">
-    <label for="precio">Precio:</label>
-    <input type= "text" name="precio" class="form-control" id="precio" required="required">
-  </div>
-
-    <div class="form-group">
-    <label for="stock">Stock Inicial:</label>
-    <input type= "number" name="stock" class="form-control" id="stock" required="required">
-  </div>
-
-  <button type="submit" class="btn btn-success">guardar</button>
-</form>
-</div>
-
-
-   </div> 
+</div> 
 
    <div class="row">
   <div class="col-md-12">
         <table id="users_table" class="table table-striped table-bordered nowrap" cellspacing="0" width="100%">
         <thead>
             <tr>
-            <td>Id</td>
+            <td>Rut</td>
             <td>Nombre</td>
             <td>Apellido</td>
             <td>Usuario</td>
-            <td>Contraseña</td> 
-            <td>Perfil</td> 
+            <td>Email</td> 
+            <td>Acciones</td> 
               
 
               

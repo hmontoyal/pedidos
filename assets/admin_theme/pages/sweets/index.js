@@ -45,9 +45,17 @@ $(document).ready(function(){
                   $('.item-delete').on('click', function(){
                     var button = $(this);
                     $.post(BASE_URL+'/sweets/disable',{id: button.data('id')}, function(result){
+
                        // alert(result);
                         if(result == true){
+                                 if(button.hasClass('btn-success')){
                                      toastr["success"]("PRODUCTO DESACTIVADO CON EXITO!");
+                                 }else{
+                                    if(button.hasClass('btn-danger')){
+                                        toastr["success"]("PRODUCTO ACTIVADO CON EXITO!");
+                                    }
+                                 }
+                                    
                                      table.ajax.reload();
                                 }else{
                                      toastr["error"]("SE PRODUJO UN ERROR, POR FAVOR INTENTELO MAS TARDE!");

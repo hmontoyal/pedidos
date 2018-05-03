@@ -50,13 +50,27 @@ $(document).ready(function(){
 
 
 $(document).on("click", ".btn-edit", function () {
-          var modal =  $('#editModal');
+          var modal =  $('#item-modal');
           modal.modal('show');
             var body = modal.find('.modal-body');
               body.load(BASE_URL + "/users/editUserHtml",{id: $(this).data('user-id') }, function(d){
 
               // $(d).find('.selectpicker').selectpicker();
                $('.selectpicker').selectpicker();
+               $('#form-update').validate();
+               $('#form-update').ajaxForm({
+                beforeSubmit: function () {
+            return $("#form-update").valid(); // TRUE when form is valid, FALSE will cancel submit
+        },
+                success: function(res) {
+                       if(res.result == true){
+                        toastr["success"]("USUARIO ACTUALIZADO CON ÉXITO!");
+                    }else{
+                        toastr["error"]("ERROR AL ACTUALIZAR, POR FAVOR INTENTELO MAS TARDE!");
+                    }
+                     }
+                
+               });
                $('.boostrapDatePicker').datepicker({
      format: 'dd/mm/yyyy',
      language:'es',
