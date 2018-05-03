@@ -3,12 +3,12 @@
  <div class="col-md-6">
       <h4>Datos del Cliente</h4>
     <ul class="list-group">
-  <li class="list-group-item">Cliente: <?php if($info->iscommercial == '1' ){ echo strtoupper($info->commercial_name); } else{
+  <li class="list-group-item">Cliente: <b><?php if($info->iscommercial == '1' ){ echo strtoupper($info->commercial_name); } else{
     echo strtoupper($info->name + ' ' + $info->last_name);
-  } ?></li>
-  <li class="list-group-item">Rut: <?php echo $info->rut; ?></li>
-  <li class="list-group-item">Dirección: <?php echo $info->address; ?></li>
-  <li class="list-group-item">Telefono: <?php echo $info->phone; ?></li>
+  } ?></b></li>
+  <li class="list-group-item">Rut: <b><?php echo $info->rut; ?></b></li>
+  <li class="list-group-item">Dirección: <b><?php echo $info->calle. ' ' .$info->numero_calle; ?></b></li>
+  <li class="list-group-item">Telefono: <b><?php echo $info->phone; ?></b></li>
 </ul>
   </div>
 
@@ -17,10 +17,11 @@
  <div class="col-md-6">
     <h4>Datos del Pedido</h4>
     <ul class="list-group">
-      <li class="list-group-item">Fecha del pedido: <?php echo $info->date; ?></li>
-  <li class="list-group-item">Total del pedido: <?php echo $info->total_pedido; ?></li>
+      <li class="list-group-item">Nª Pedido: <b><?php echo $info->id_request; ?></b></li>
+      <li class="list-group-item">Fecha del pedido: <b><?php echo $info->date; ?></b></li>
+  <li class="list-group-item">Total del pedido: <b><?php echo $info->total_pedido; ?></b></li>
   
-  <li class="list-group-item">Estado: <?php echo $info->str_state; ?></li>
+  <li class="list-group-item">Estado: <b><font size="4"><?php echo $info->str_state; ?></font></b></li>
 </ul>
   </div>
 
@@ -34,12 +35,12 @@
         <table id="solicitudes_table" class="table table-striped table-bordered nowrap" cellspacing="0" width="100%">
         <thead>
             <tr>
-              <td>Producto</td>
-              <td>Cantidad</td>
-              <td>Stock Bodega</td>
-              <th>Precio Unitario</th>
-              <th>Total</th>
-              <th>Validacion</th>
+              <td><b>Producto</b></td>
+              <td><b>Cantidad</b></td>
+              <td><b>Stock Bodega</b></td>
+              <th><b>Precio Unitario</b></th>
+              <th><b>Total</b></th>
+              <th><b>Validacion</b></th>
               
                            
 

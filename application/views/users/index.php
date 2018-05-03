@@ -2,7 +2,7 @@
           <form action="<?php echo base_url('users/createuser') ?>" role="form" class="" method="post" id="form">
             
             <div class="row">
-                   <div class="col-md-3 form-group">
+                   <div class="col-md-2 form-group">
            
            <label for="rut">Rut</label>
                  <input type="text" name="rut" class="form-control" placeholder="12343433-5">

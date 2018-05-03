@@ -18,7 +18,7 @@
   </div>
 
     <div class="form-group col-md-3">
-    <label for="stock">Stock Inicial:</label>
+    <label for="stock">Stock:</label>
     <input type= "number" name="stock" class="form-control" id="stock" required="required">
   </div>
   <br>

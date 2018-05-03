@@ -20,12 +20,13 @@
         <table id="solicitudes_table" class="table table-striped table-bordered nowrap" cellspacing="0" width="100%">
         <thead>
             <tr>
-              <td>Rut</td>
-              <td>Estado</td>
-              <th>Fecha</th>
-              <th>Nombre cliente</th>
-              <th>Total Pedido</th>
-              <th>Acciones</th>
+              <td><b>Nº Pedido</b></td>
+              <td><b>Estado</b></td>
+              <td><b>Rut</b></td>              
+              <td><b>Fecha</b></td>
+              <td><b>Nombre Cliente</b></td>
+              <td><b>Total Pedido</b></td>
+              <td><b>Acciones</b></td>
               
 
               
