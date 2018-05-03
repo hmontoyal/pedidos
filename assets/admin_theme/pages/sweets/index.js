@@ -47,7 +47,7 @@ $(document).ready(function(){
                     $.post(BASE_URL+'/sweets/disable',{id: button.data('id')}, function(result){
                        // alert(result);
                         if(result == true){
-                                     toastr["success"]("ELIMINADO CON EXITO!");
+                                     toastr["success"]("PRODUCTO DESACTIVADO CON EXITO!");
                                      table.ajax.reload();
                                 }else{
                                      toastr["error"]("SE PRODUJO UN ERROR, POR FAVOR INTENTELO MAS TARDE!");

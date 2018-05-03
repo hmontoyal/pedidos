@@ -15,7 +15,7 @@
     <input type= "text" name="rut" class="form-control" id="rut" required="required">
   </div>
 
-  <div class="form-group col-md-4">
+  <!-- <div class="form-group col-md-4">
     <label for="nombre">Nombre:</label>
     <input type= "text" name="nombre" class="form-control" id="nombre" required="required">
   </div>
@@ -23,9 +23,9 @@
   <div class="form-group col-md-4">
     <label for="apellido">Apellido:</label>
     <input type= "text" name="apellido" class="form-control" id="apellido" required="required">
-  </div>
+  </div> -->
     </div>
-<div class="row">
+<!-- <div class="row">
      <div class="form-group col-md-5">
     <label for="nombre_comercial">Nombre comercial:</label>
     <input type= "text" name="nombre_comercial" class="form-control" id="nombre_comercial" required="required">
@@ -51,7 +51,7 @@
     <input type= "email" name="email" class="form-control" id="email" required="required">
   </div>
 
-</div>   
+</div>    -->
 
    <div class="form-group col-md-2">
     <br>
@@ -64,7 +64,7 @@
 
    </div> 
    <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-2">Filtrar:
        <select name="filtro" id="filtro" class="form-control selectpicker" data-live-search="true">
        <option value="">TODOS</option>
         <option value="1">ACTIVOS</option>

@@ -29,8 +29,8 @@
    </div> 
 
       <div class="row">
-    <div class="col-md-4">
-       <select name="filtro" id="filtro" class="form-control selectpicker" data-live-search="true">
+    <div class="col-md-2">
+      Filtrar: <select name="filtro" id="filtro" class="form-control selectpicker" data-live-search="true">
        <option value="">TODOS</option>
         <option value="1">ACTIVOS</option>
         <option value="2">INACTIVOS</option>
