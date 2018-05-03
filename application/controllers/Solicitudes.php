@@ -58,7 +58,27 @@ class Solicitudes extends MY_Controller {
 	public function listar_solicitudes(){
 		if($this->input->post()){
 			 $this->load->model('datatables/solicitudes_model', 'solicitudes');
-                  $list = $this->solicitudes->get_datatables();
+			 $estado = $this->input->post('estado');
+
+			 switch ($estado) {
+			 	case '0':
+			 		 $list = $this->solicitudes->get_datatables('state = 0');
+			 		break;
+			 	case '1':
+			 		 $list = $this->solicitudes->get_datatables('state = 1');
+			 		break;
+			 	case '2':
+			 		 $list = $this->solicitudes->get_datatables('state = 2');
+			 		break;
+			 	case '3':
+			 		 $list = $this->solicitudes->get_datatables('state = 3');
+			 		break;
+			 	
+			 	default:
+			 		 $list = $this->solicitudes->get_datatables();
+			 		break;
+			 }
+                 
 					        $data = array();
 					        $no = $_POST['start'];
 					        foreach ($list as $fila) {
@@ -127,6 +147,18 @@ class Solicitudes extends MY_Controller {
                			 '../init_tables.js',
                			 'pages/solicitudes/detalle.js'));
 		$this->template->load('default_layout', 'contents' , 'solicitudes/detalle', array('details' => $details, 'info' => $info));
+	}
+
+
+	public function confirmar(){
+		header('Content-Type: application/json');
+		if($this->input->post()){
+			$id= $this->input->post('id');
+			$this->load->model('request_model', 'request');
+			echo json_encode($this->request->confirm($id));
+		}
+
+
 	}
 
 	
