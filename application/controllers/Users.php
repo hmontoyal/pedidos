@@ -229,7 +229,7 @@ public function administrar(){
                          );
               $this->template->set('css', $css);
             $this->template->set('scripts', $scripts);
-             $this->template->load('default_layout', 'contents' , 'users/listado');
+             $this->template->load('default_layout', 'contents' , 'users/administrar');
     	}
     }
 

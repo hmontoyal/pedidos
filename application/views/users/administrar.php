@@ -30,15 +30,15 @@
 
    <div class="row">
   <div class="col-md-12">
-        <table id="sweets_table" class="table table-striped table-bordered nowrap" cellspacing="0" width="100%">
+        <table id="users_table" class="table table-striped table-bordered nowrap" cellspacing="0" width="100%">
         <thead>
             <tr>
             <td>Id</td>
-            <td>Codigo</td>
             <td>Nombre</td>
-            <td>Stock</td>
-            <td>Precio</td> 
-            <td>Acciones</td> 
+            <td>Apellido</td>
+            <td>Usuario</td>
+            <td>Contraseña</td> 
+            <td>Perfil</td> 
               
 
               
