@@ -47,25 +47,30 @@
   <!-- <img src="<?php // echo $_SERVER['DOCUMENT_ROOT']."/media/dist/img/no-signal.png"; ?>" alt=""> -->
   <!-- In your local server -->
 
- 
+ <p align="right"><font size="20">Nº<?php echo $data[0]->id_request; ?></font></p>
   <div class="row">
-  <div class="col-md-4">
+  
 <img style="float" src="assets/img/logotipo.png" width="90" height="70">
-<div class="col-md-4"><center>Solicitud de Productos</center>
+<center><font size="25">Solicitud de Productos</font></center>
+
+
+  <div>
 <center>DulceSur Ltda</center>
 <center>Maipu 1921, Concepcióm</center>
-<center>Telefono: 41- 2312642</center></div>
+<center>Telefono: 41- 2312642</center>
   </div>
   
   </div>
   <table>
   <div class="info">
  <ul>
-   <li>Cliente : <?php echo $data[0]->client_name. '  '.$data[0]->last_name; ?></li>
-   <li>Direccion: <?php echo $data[0]->address; ?></li>
-   <li>Telefono : <?php echo $data[0]->phone; ?></li>
-   <li>Email : <?php echo $data[0]->email; ?></li>
-   <li>Fecha Pedido: <?php echo $data[0]->date; ?></li>
+  <li><b>Cliente : </b><?php echo $data[0]->commercial_name; ?></li>
+  <li><b>Direccion: </b><?php echo $data[0]->calle. '  '.$data[0]->numero_calle; ?></li>
+<!--    <li>Cliente : <?php echo $data[0]->client_name. '  '.$data[0]->last_name; ?></li> -->
+  <!--  <li>Direccion: <?php echo $data[0]->address; ?></li> -->
+   <li><b>Telefono : </b><?php echo $data[0]->phone; ?></li>
+   <li><b>Email : </b><?php echo $data[0]->email; ?></li>
+   <li><b>Fecha Pedido: </b><?php echo $data[0]->date; ?></li>
 
  </ul>
 </div>
@@ -100,16 +105,27 @@
 	  		<?php $no++; ?>
 	  		<?php endforeach; ?>
 
-      <tr>
-        <td>Neto : <?php echo $total; ?></td>
+       <tr>
+        <td colspan="5"></td>
+        <td><b>Neto : <?php echo $total; ?></b></td>
        
       </tr>
       <tr>
-          <td>IVA : <?php echo ($total*1.19 - $total); ?></td>
+        <td colspan="5"></td>
+          <td><b>IVA : <?php echo ($total*1.19 - $total); ?></b></td>
               </tr>
               <tr>
-                 <td>Total: <?php echo $total*1.19; ?></td>
+                <td colspan="5"></td>
+                 <td><b>Total: <?php echo $total*1.19; ?></b></td>
               </tr>
-	  </table>
+
+
+
+
+
+     	  </table>
+
+      
+
 	 </div>
 </body></html>

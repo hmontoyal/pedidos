@@ -48,16 +48,11 @@
         <thead>
             <tr>
             <td>Id</td>
-            <td>Codigo</td>
+           <!--  <td>Codigo</td> -->
             <td>Nombre</td>
             <td>Stock</td>
             <td>Precio</td> 
-            <td>Acciones</td> 
-              
-
-              
-
-                
+            <td>Acciones</td>                 
             </tr>
         </thead>
        <!--  <tfoot>

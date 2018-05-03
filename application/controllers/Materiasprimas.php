@@ -34,11 +34,11 @@ class Materiasprimas extends MY_Controller
 			 //$this->load->view('create_user', array('anexos' => $anexos));
 	   $css = array();
 	   $scripts = array('pages/users/create.js');		
-	   $this->template->set('title', 'Administrador de Usuarios');
-       $this->template->set('page_header', 'Crear Nuevo Usuario');
+	   $this->template->set('title', 'Administrador de Materias Primas');
+       $this->template->set('page_header', 'Registrar Materias Primas');
        $this->template->set('css', $css);
        $this->template->set('scripts', $scripts);
-       $this->template->load('default_layout', 'contents' , 'users/index');
+       $this->template->load('default_layout', 'contents' , 'materiasprimas/index');
 			
 
 		}

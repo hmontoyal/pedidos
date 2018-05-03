@@ -36,17 +36,17 @@
       </select>
   </div>
   <div class="form-group col-md-2">
-      <label for="cantidad">Cantidades</label>
+      <label for="cantidad">Cantidad</label>
       <input type="number" name="cantidad[]" class="form-control" id="cantidad" value="1" min="1" max="500" required="required">
 
 
 
     </div>
     <div class="clone form-group col-md-1">
-        <label for="">Mas campos</label>
+        <label for="">Agregar Productos</label>
       <button class="btn btn-success" >+</button></div>
       <div class="delete form-group col-md-1" >
-        <label for="">Quitar campos</label>
+        <label for="">Quitar Productos</label>
         <button class="btn btn-danger" >-</button></div>
   </div>
 </div>
