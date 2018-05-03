@@ -29,8 +29,8 @@ if( $this->require_min_level(EJECUTIVE_LEVEL) )
 
 			$sweets = $this->sweets_model->_list();
 			$clients = $this->clients_model->_list();
-			$this->template->set('title', 'Sistema Sweet Dulce Sur');
-			$this->template->set('page_header', 'Sistema Gestion Productos Artesanales SWeet');
+			$this->template->set('title', 'Sistema Sweet - Dulce Sur');
+			$this->template->set('page_header', 'Sistema de Monitoreo y Gestion Productos Artesanales SWeet');
 			$this->template->set('css', array());
 			$this->template->set('scripts', array('pages/welcome/index.js'));
 			$this->template->load('default_layout', 'contents' , 'inicio/index', array('sweets' => $sweets, 'clients' => $clients));
@@ -46,8 +46,8 @@ if( $this->require_min_level(EJECUTIVE_LEVEL) )
 
 			$sweets = $this->sweets_model->_list();
 			$clients = $this->clients_model->_list();
-			$this->template->set('title', 'Generar Pedido Productos (OC)');
-			$this->template->set('page_header', 'Generar Pedido Productos (OC)');
+			$this->template->set('title', 'Generar Pedido Productos');
+			$this->template->set('page_header', 'Ingresar Solicitud de Productos');
 			$this->template->set('css', array());
 			$this->template->set('scripts', array('pages/welcome/index.js'));
 			$this->template->load('default_layout', 'contents' , 'welcome_message', array('sweets' => $sweets, 'clients' => $clients));
@@ -87,7 +87,7 @@ if( $this->require_min_level(EJECUTIVE_LEVEL) )
 			$data = $this->request_model->detail($id);
 			 $html = $this->load->view('table_report', array('data' => $data), true);
     $filename = 'report_'.time();
-     $this->pdfgenerator->generate($html, $filename, true, 'A4', 'portrait');
+     $this->pdfgenerator->generate($html, $filename, true, 'letter', 'portrait');
 		}
 	}
 

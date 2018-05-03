@@ -2,8 +2,9 @@
           <form action="<?php echo base_url('users/createuser') ?>" role="form" class="" method="post" id="form">
             
             <div class="row">
-                   <div class="col-md-3 form-group">
-            <label for="rut">Rut</label>
+                   <div class="col-md-2 form-group">
+           
+           <label for="rut">Rut</label>
                  <input type="text" name="rut" class="form-control" placeholder="12343433-5">
             </div>
                 <div class="col-md-3 form-group">
@@ -11,15 +12,15 @@
                 <input type="text" name="nombre" class="form-control" required="required" placeholder="Pedro">
             </div>
                 <div class="col-md-3 form-group">
-            <label for="apellido">Apellido Paterno</label>
+            <label for="apellido">Apellido</label>
                  <input type="text" name="apellido" class="form-control" required="required" placeholder="Gonzalez">
             </div>
-
-            <div class="col-md-3 form-group">
+</div>
+           <!--  <div class="col-md-3 form-group">
             <label for="apellido">Apellido Materno</label>
                  <input type="text" name="apellido" class="form-control" required="required" placeholder="Gonzalez">
-            </div>
-
+            </div> -->
+<div class="row">
               <div class="col-md-3 form-group">
             <label for="username">Username</label>
                  <input type="text" name="username" class="form-control" required="required" placeholder="pgonzalez">

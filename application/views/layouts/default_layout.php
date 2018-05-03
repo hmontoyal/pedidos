@@ -267,7 +267,7 @@
             {if (i<10) {i="0" + i;}return i;}
                 window.onload=function(){startTime();}
             </script>
-            <div id="reloj" style="font-size:20px;"></div> </center>
+            <div id="reloj" style="font-size:30px;"></div> </center>
 
 
                 </div>

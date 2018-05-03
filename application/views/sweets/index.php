@@ -1,27 +1,31 @@
 <div class="col-md-12">
       <div class="row filtros">
-<div class="col-md-1">
+<div class="col-md-12">
        <div class="form-group">
          <button class="btn btn-success" id="btn-add">Agregar</button>
        </div>
       </div>
-      <div class="col-md-11" id="form-add-wrapper" style="display:none">
+      <div class="col-md-12" id="form-add-wrapper" style="display:none">
        <?php echo form_open(base_url('sweets/crear'),array('method' => 'post' , 'role' => 'form', 'id' => 'add-form', 'class' => 'form-inline')); ?>
-  <div class="form-group">
-    <label for="nombre">Nombre:</label>
+       <div class="row">
+  <div class="form-group col-md-3">
+    <label for="nombre">Nombre Producto:</label>
     <input type= "text" name="nombre" class="form-control" id="nombre" required="required">
   </div>
-  <div class="form-group">
+  <div class="form-group col-md-3">
     <label for="precio">Precio:</label>
     <input type= "text" name="precio" class="form-control" id="precio" required="required">
   </div>
 
-    <div class="form-group">
-    <label for="stock">Stock Inicial:</label>
+    <div class="form-group col-md-3">
+    <label for="stock">Stock:</label>
     <input type= "number" name="stock" class="form-control" id="stock" required="required">
   </div>
-
-  <button type="submit" class="btn btn-success">guardar</button>
+  <br>
+<div class="row">
+  <button type="submit" class="btn btn-success">Guardar</button>
+</div>
+</div>
 </form>
 </div>
 
@@ -44,16 +48,11 @@
         <thead>
             <tr>
             <td>Id</td>
-            <td>Codigo</td>
+           <!--  <td>Codigo</td> -->
             <td>Nombre</td>
             <td>Stock</td>
             <td>Precio</td> 
-            <td>Acciones</td> 
-              
-
-              
-
-                
+            <td>Acciones</td>                 
             </tr>
         </thead>
        <!--  <tfoot>

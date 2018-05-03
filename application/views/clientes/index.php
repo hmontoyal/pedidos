@@ -1,36 +1,36 @@
 <div class="col-md-12">
       <div class="row filtros">
-<div class="col-md-1">
+<div class="col-md-12">
        <div class="form-group">
          <button class="btn btn-success" id="btn-add">Agregar</button>
        </div>
 </div>
-      <div  id="form-add-wrapper" class="col-md-11" style="display:none">
+
+
+      <div  id="form-add-wrapper" class="col-md-12" style="display:none">
       
       <div class="row">
                <?php echo form_open(base_url('clientes/crear'),array('method' => 'post' , 'role' => 'form', 'id' => 'add-form', 'class' => 'form-inline')); ?>
-    
+
   <div class="form-group col-md-2">
-    <label for="rut">Rut:</label>
+    <label for="rut">Rut Cliente:</label>
     <input type= "text" name="rut" class="form-control" id="rut" required="required">
   </div>
-
-  <!-- <div class="form-group col-md-4">
-    <label for="nombre">Nombre:</label>
+  <div class="form-group col-md-3">
+    <label for="nombre">Nombre Contacto:</label>
     <input type= "text" name="nombre" class="form-control" id="nombre" required="required">
   </div>
-
-  <div class="form-group col-md-4">
-    <label for="apellido">Apellido:</label>
+  <div class="form-group col-md-3">
+    <label for="apellido">Apellido Contacto:</label>
     <input type= "text" name="apellido" class="form-control" id="apellido" required="required">
-  </div> -->
-    </div>
-<!-- <div class="row">
-     <div class="form-group col-md-5">
-    <label for="nombre_comercial">Nombre comercial:</label>
-    <input type= "text" name="nombre_comercial" class="form-control" id="nombre_comercial" required="required">
   </div>
- 
+
+    </div>
+<div class="row">
+     <div class="form-group col-md-5">
+    <label for="nombre_comercial">Nombre comercial o Razon Social:</label>
+    <input type= "text" name="nombre_comercial" class="form-control" id="nombre_comercial" required="required">
+  </div> 
   <div class="form-group col-md-5">
     <label for="calle">Direccion:</label>
     <input type= "text" name="direccion" class="form-control" id="direccion" required="required">
@@ -39,24 +39,21 @@
     <label for="numero">Numero:</label>
     <input type= "text" name="numero" class="form-control" id="direccion" required="required">
   </div>
-</div>
-<div clas="row">
-    <div class="form-group col-md-2">
+ <div class="form-group col-md-2">
     <label for="telefono">Telefono:</label>
     <input type= "text" name="telefono" class="form-control" id="telefono" required="required">
   </div>
-
-  <div class="form-group col-md-2">
+  <div class="form-group col-md-3">
     <label for="email">Email:</label>
     <input type= "email" name="email" class="form-control" id="email" required="required">
   </div>
-
-</div>    -->
-
+</div> 
+<div class="row">
    <div class="form-group col-md-2">
     <br>
-     <button type="submit" name="button" class="btn btn-success">guardar</button>
+     <button type="submit" name="button" class="btn btn-success">Guardar</button>
    </div>
+ </div>
 </form>
       </div>
 </div>

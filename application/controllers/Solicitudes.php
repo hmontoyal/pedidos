@@ -85,8 +85,10 @@ class Solicitudes extends MY_Controller {
 					          //var_dump($tareas);
 					            $no++;
 					            $row = array();
-					            $row[] = $fila->rut;
+					            $row[] = $fila->id_request;
 					            $row[] = $fila->str_state;
+					            $row[] = $fila->rut;
+					           
 					            $row[] = $fila->date;
 					            $row[] = strtoupper($fila->nombre_cliente);
 					            $row[] = $fila->total_pedido;
