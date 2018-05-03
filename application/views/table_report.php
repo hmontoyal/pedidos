@@ -101,7 +101,7 @@
 	  		<?php endforeach; ?>
 
       <tr>
-        <td align="right">Neto : <?php echo $total; ?></td>
+        <td>Neto : <?php echo $total; ?></td>
        
       </tr>
       <tr>

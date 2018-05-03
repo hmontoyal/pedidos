@@ -13,7 +13,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
  * @link        http://community-auth.com
  */
 
-class Users extends MY_Controller
+class Materiasprimas extends MY_Controller
 {
 	public function __construct()
 	{
@@ -60,11 +60,11 @@ public function administrar(){
 			 //$this->load->view('create_user', array('anexos' => $anexos));
 	   $css = array();
 	   $scripts = array('pages/users/create.js');		
-	   $this->template->set('title', 'Administrador de Usuarios');
-       $this->template->set('page_header', 'Administrador de Usuarios');
+	   $this->template->set('title', 'Administrador de Materias Primas');
+       $this->template->set('page_header', 'Administrador de Materias Primas');
        $this->template->set('css', $css);
        $this->template->set('scripts', $scripts);
-       $this->template->load('default_layout', 'contents' , 'users/administrar');
+       $this->template->load('default_layout', 'contents' , 'materiasprimas/index');
 			
 
 		}

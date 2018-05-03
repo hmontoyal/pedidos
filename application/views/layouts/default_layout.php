@@ -221,12 +221,27 @@
                           
                         </li> 
 
+                            <li>
+                            <a href="#"><i class="fa fa-ticket fa-fw"></i>Gestion de Materias Primas<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                               
+                          <li>
+                            <a href="<?php echo base_url('materiasprimas/administrar'); ?>"><i class="fa fa-dashboard fa-fw"></i> Administrar Materias Primas</a>
+                        </li>
+                              </ul>
+                          
+                        </li>
+
+
                         <li>
                             <a href="#"><i class="fa fa-users"></i> Administracion de Usuarios<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                
                           <li>
                             <a href="<?php echo base_url('users/nuevo'); ?>"><i class="fa fa-user-plus fa-fw"></i> Crear Usuario</a>
+                        </li>
+                         <li>
+                            <a href="<?php echo base_url('users/administrar'); ?>"><i class="fa fa-user-plus fa-fw"></i> Administrar Usuarios</a>
                         </li>
                               </ul>
                           
