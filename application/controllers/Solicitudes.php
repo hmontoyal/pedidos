@@ -159,8 +159,15 @@ class Solicitudes extends MY_Controller {
 			$this->load->model('request_model', 'request');
 			echo json_encode($this->request->confirm($id));
 		}
+	}
 
-
+	public function despachar(){
+		header('Content-Type: application/json');
+		if($this->input->post()){
+			$id= $this->input->post('id');
+			$this->load->model('request_model', 'request');
+			echo json_encode($this->request->despachar($id));
+		}
 	}
 
 	

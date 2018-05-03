@@ -103,11 +103,38 @@
 
 <div class="row">
 	<div class="col-md-6">
-		<?php if($validacion == true ): ?>
-			<button class="btn btn-success" id="btn-confirm" data-id="<?php echo $info->id_request; ?>"><i class="fa fa-thumbs-o-up"></i>&nbsp;Confirmar</button>
-		<?php else : ?>
-			<button class="btn btn-success">Gestionar Stock</button>
-	    <?php endif; ?>
+    <?php switch ($info->state) {
+      case 0:
+       ?>
+         <div class="btn-group">
+  <button type="button" class="btn btn-success" id="btn-confirm" data-id="<?php echo $info->id_request; ?>"><i class="fa fa-thumbs-o-up"></i>&nbsp;Confirmar</button>
+  <button type="button" class="btn btn-primary" disabled="disabled" >Despachar</button>
+  <button type="button" class="btn btn-primary" disabled="disabled">Entregar</button>
+</div>
+       <?php
+        break;
+    case 1:  ?>
+    <div class="btn-group">
+  <button type="button" class="btn btn-primary" disabled="disabled">Confirmar</button>
+  <button type="button" class="btn btn-success" id="btn-despachar" data-id="<?php echo $info->id_request; ?>">Despachar</button>
+  <button type="button" class="btn btn-primary" disabled="disabled">Entregar</button>
+</div>
+<?php
+   break;
+ case 2 : ?>
+      <div class="btn-group">
+  <button type="button" class="btn btn-primary" disabled="disabled">Confirmar</button>
+  <button type="button" class="btn btn-primary" disabled="disabled">Despachar</button>
+  <button type="button" class="btn btn-success" id="btn-entregar" data-id="<?php echo $info->id_request; ?>">Entregar</button>
+</div>
+<?php 
+      break;
+
+      default:
+        # code...
+        break;
+    } ?>
+
 	</div>
 </div>
  </div>

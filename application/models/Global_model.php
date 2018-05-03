@@ -36,6 +36,24 @@ class Global_model extends CI_Model {
     return false;
   }
 
+    public function findUser($id){
+    $result = $this->db->get_where('users', array('user_id' => $id));
+    if($result->num_rows() > 0 ){
+      return $result->row();
+    }
+    return false;
+  }
+
+
+  public function updateUser($data){
+          $this->db->where('user_id',$data['user_id']);
+    $this->db->update('users', $data);
+     if($this->db->affected_rows() > 0){
+      return true;
+     }
+    return false;
+  }
+
 
      
 
